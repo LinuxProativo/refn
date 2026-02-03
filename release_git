@@ -1,0 +1,11 @@
+#!/bin/sh
+
+VER="$(grep -Eom1 "VERSION \"(([0-9]+)[.])+[0-9]+" src/main.cpp)"
+
+TAG="Continuous"
+BINARY=cmake-build-release/refn
+
+gh release delete "$TAG" --yes
+gh release create "$TAG" "$BINARY" --title "$TAG" --notes "refn v${VER#*\"} Release - 64bit"
+
+echo "Release '$TAG' criada/atualizada com o binário enviado."

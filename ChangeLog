@@ -1,0 +1,34 @@
+Mon Feb  2 16:30:21 -03 2026:
+    - refactory code.
+    - refactory help.
+    - simplify and clean code.
+    - various bug fix.
+
+[ 3.1 ] - 2021-09-07:
+    - Add error message for no file entries.
+    - Clean unnecessary codes for '-c' and '-s' parameters.
+
+[ 3.0 ] - 2021-09-04:
+    - Added parameter '-s' for simple view for '-f', '-l', '-d' and '-i' parameters.
+    - Code refactored and improved using the function getopt_long() for parameters selection.
+    - Error messages improved.
+    - Removed parameter 0, replaced by '-s' parameters.
+
+## [ 2.0 ] - 2021-02-14:
+    - Added parameter '-i' for read inverted the specific lines of the files.
+    - Added parameter 'c' for enable color for '-f', '-l', '-d' and '-i'parameters.
+    - Changed parameter '-d' for best delimitation.
+    - Removed parameter '-s', now unnecessary for parameter 'd'.
+    - Removed parameter '-a', function now made by the parameter 'd'.
+    - Fixed exibition of the complete local of the text files.
+    - Output adjust of the parameter '0'.
+    - Improvements in the selection of parameters.
+
+[ 1.0 ] - 2021-02-08:
+    - Added parameter '-f' for read the first lines of the files.
+    - Added parameter '-l' for read the last lines of the files.
+    - Added parameter '-a' for read a line from a file.
+    - Added parameter '-d' and '-s' for read the specific lines of the files.
+    - Added parameter '-h' for view help information.
+    - The Parameter '-f0', '-t0', '-a0' and '-d0' has the same result
+      as '-f', '-t', '-a' and '-d', but without enumerating the lines.
