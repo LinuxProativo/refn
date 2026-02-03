@@ -6,12 +6,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/C%2B%2B-23-blue?logo=cplusplus" alt="">
-  <img src="https://img.shields.io/codefactor/grade/github/linuxproativo/refn?logo=codefactor" alt="">
-  <img src="https://img.shields.io/badge/License-GPLv3-red.svg" alt="">
-  <img src="https://img.shields.io/badge/Binary_Size-%3C_1.5MB-green" alt="">
-  <img src="https://img.shields.io/github/repo-size/linuxproativo/refn?color=brightgreen" alt="">
-  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn?color=green" alt="">
-  <img src="https://img.shields.io/github/v/release/linuxproativo/refn?color=orange" alt="">
+  <img src="https://img.shields.io/badge/binary_size-%3C_1.5MiB-green" alt="">
+  <img src="https://img.shields.io/github/repo-size/linuxproativo/refn" alt="">
+  <img src="https://img.shields.io/github/release-date/linuxproativo/refn" alt="">
+  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn" alt="">
+  <img src="https://img.shields.io/github/v/release/linuxproativo/refn" alt="">
+  <img src="https://img.shields.io/github/actions/workflow/status/linuxproativo/refn/cmake-multi-platform.yml" alt="">
 </p>
 
 The **refn** utility is a high-performance CLI tool designed to extract specific 
