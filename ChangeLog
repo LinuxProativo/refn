@@ -1,8 +1,10 @@
+Tue Feb  3 21:16:08 -03 2026:
+    - add windows support
 Mon Feb  2 16:30:21 -03 2026:
-    - refactory code.
-    - refactory help.
-    - simplify and clean code.
-    - various bug fix.
+    - refactory code
+    - refactory help
+    - simplify and clean code
+    - various bug fix
 
 [ 3.1 ] - 2021-09-07:
     - Add error message for no file entries.
