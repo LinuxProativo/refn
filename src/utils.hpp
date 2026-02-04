@@ -10,6 +10,8 @@
 
 #ifdef _WIN32
     #include <io.h>
+    #include <stdlib.h>
+    #define realpath(N, R) _fullpath((R), (N), _MAX_PATH)
     #define R_OK 4
     #define F_OK 0
     #define access _access
