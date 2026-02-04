@@ -19,21 +19,30 @@ set(REFN_SOURCES
         src/utils.hpp
 )
 
+if(MSVC)
+    list(APPEND REFN_SOURCES
+            src/getopt.c
+            src/getopt.h
+    )
+endif ()
+
 add_executable(${PRG_NAME} ${REFN_SOURCES})
 
-target_compile_options(${PRG_NAME} PRIVATE
-        -Os
-        -fno-ident
-        -fno-stack-protector
-        -fvisibility=hidden
-        -ffunction-sections
-        -fdata-sections
-        -fno-unwind-tables
-        -fno-asynchronous-unwind-tables
-        -fno-exceptions
-        -fno-rtti
-        -fno-unroll-loops
-)
+if(NOT MSVC)
+    target_compile_options(${PRG_NAME} PRIVATE
+            -Os
+            -fno-ident
+            -fno-stack-protector
+            -fvisibility=hidden
+            -ffunction-sections
+            -fdata-sections
+            -fno-unwind-tables
+            -fno-asynchronous-unwind-tables
+            -fno-exceptions
+            -fno-rtti
+            -fno-unroll-loops
+    )
+endif ()
 
 target_link_options(${PRG_NAME} PRIVATE
         -Wl,-s
