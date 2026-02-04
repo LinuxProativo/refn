@@ -7,7 +7,12 @@
 
 #include <cstring>
 #include <iostream>
-#include <getopt.h>
+
+#ifdef _WIN32
+    #include "getopt.h"
+#else
+    #include <getopt.h>
+#endif
 
 #include "utils.hpp"
 

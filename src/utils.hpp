@@ -8,7 +8,14 @@
 #ifndef REF_UTILS_HPP
 #define REF_UTILS_HPP
 
-#include <unistd.h>
+#ifdef _WIN32
+    #include <io.h>
+    #define R_OK 4
+    #define F_OK 0
+    #define access _access
+#else
+    #include <unistd.h>
+#endif
 
 #define DEF_NUM 10
 
