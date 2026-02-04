@@ -42,14 +42,14 @@ if(NOT MSVC)
             -fno-rtti
             -fno-unroll-loops
     )
-endif ()
 
-target_link_options(${PRG_NAME} PRIVATE
-        -Wl,-s
-        -Wl,--gc-sections
-        -Wl,--build-id=none
-        -static
-)
+    target_link_options(${PRG_NAME} PRIVATE
+            -Wl,-s
+            -Wl,--gc-sections
+            -Wl,--build-id=none
+            -static
+    )
+endif ()
 
 include(CheckIPOSupported)
 check_ipo_supported(RESULT supported OUTPUT error)
