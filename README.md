@@ -5,13 +5,16 @@
 <h1 align="center"><strong>refn - Reads specific lines of text documents</strong></h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-23-blue?logo=cplusplus" alt="">
-  <img src="https://img.shields.io/badge/binary_size-%3C_1.5MiB-green" alt="">
-  <img src="https://img.shields.io/github/repo-size/linuxproativo/refn" alt="">
-  <img src="https://img.shields.io/github/release-date/linuxproativo/refn" alt="">
-  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn" alt="">
-  <img src="https://img.shields.io/github/v/release/linuxproativo/refn" alt="">
-  <img src="https://img.shields.io/github/actions/workflow/status/linuxproativo/refn/cmake-multi-platform.yml" alt="">
+  <a href="https://github.com/linuxproativo/refn/actions" style="text-decoration:none;"><img src="https://img.shields.io/github/actions/workflow/status/linuxproativo/refn/cmake-multi-platform.yml?style=flat-square&label=Build" alt="Build Status"/></a>
+  <img src="https://img.shields.io/badge/Windows-Tested-0078D4?style=flat-square&logo=quarto&logoColor=white" alt="Windows"/>
+  <img src="https://img.shields.io/badge/Linux-Tested-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-23-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++23"/>
+  <img src="https://img.shields.io/badge/Binary_Size-%3C_1.5_MiB-44CC11?style=flat-square" alt="Binary Size"/>
+  <img src="https://img.shields.io/github/repo-size/linuxproativo/refn?label=Repo%20Size&style=flat-square" alt="Repo Size"/>
+  <a href="https://github.com/linuxproativo/refn/releases" style="text-decoration:none;"><img src="https://img.shields.io/github/v/release/linuxproativo/refn?color=34495e&label=Release&style=flat-square" alt="Release"/></a>
+  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn?color=a4cc35&label=Last%20Commit&style=flat-square" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/release-date/linuxproativo/refn?color=a4cc35&label=Release%20Date&style=flat-square" alt="Release Date"/>
+  <a href="./LICENSE" style="text-decoration:none;"><img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="License GPL-3.0"/></a>
 </p>
 
 The **refn** utility is a high-performance CLI tool designed to extract specific 
@@ -327,12 +330,10 @@ to facilitate the search for specific lines in files.
 
 ## ⚖️ GNU General Public License
 
-This repository has scripts that were created to be free software.<br/>
-Therefore, they can be distributed and / or modified within the terms of the *GNU General Public License*.
+This repository has scripts that were created to be free software. Therefore, 
+they can be distributed and / or modified within the terms of the *GNU General Public License*.
 
->[General Public License](https://pt.wikipedia.org/wiki/GNU_General_Public_License)
->
->Free Software Foundation (FSF) Inc. 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+> ### [General Public License](https://pt.wikipedia.org/wiki/GNU_General_Public_License)
 
 ## 🤝 Contributing
 
@@ -364,7 +365,7 @@ We are currently looking for help with:
 * Refinement of the argument parser.
 * Support for reading compressed files (e.g., `.gz`) without prior extraction.
 
-## 📩 Contact
+## 📬 Contact & Support
 
-Autor: Mauricio Ferrari (LinuxProativo)  
-E-Mail: *m10ferrari1200@gmail.com - contatolinuxdicaspro@gmail.com*
+* 📧 **Email:** [m10ferrari1200@gmail.com](mailto:m10ferrari1200@gmail.com)
+* 📧 **Email:** [contatolinuxdicaspro@gmail.com](mailto:contatolinuxdicaspro@gmail.com)
