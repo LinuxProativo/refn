@@ -145,19 +145,23 @@ same result using standard POSIX tools (`sed`, `awk`, `tail`, `head`).
 
 ### 💡 Key Takeaways
 
-1. **Consistency:** Standard tools require switching between `sed`, `awk`, `head`,
-and `tail` depending on the task. refn uses the same flags for everything.
+1. **Consistency**  
+   Standard tools require switching between `sed`, `awk`, `head`,
+   and `tail` depending on the task. refn uses the same flags for everything.
 
-2. **Safety First:** When using `tail -n +X | head -n Y`, if the file is smaller
-than X, the behavior can be unpredictable across different shell environments.
-refn performs boundary checks to ensure valid output.
+2. **Safety First**  
+   When using `tail -n +X | head -n Y`, if the file is smaller
+   than X, the behavior can be unpredictable across different shell environments.
+   refn performs boundary checks to ensure valid output.
 
-3. **Performance Optimization:** In the Shell commands above, we used `;q` (quit)
-in `sed` and `exit` in `awk`. Without these, they would read the entire file even
-if you only wanted the first line. refn does this automatically by design.
+3. **Performance Optimization**  
+   In the Shell commands above, we used `;q` (quit)
+   in `sed` and `exit` in `awk`. Without these, they would read the entire file even
+   if you only wanted the first line. refn does this automatically by design.
 
-4. **Process Overhead:** Every `|` (pipe) in the table above creates a new process in
-your OS. refn runs as a single, highly optimized C++ binary, saving CPU cycles and memory.
+4. **Process Overhead**  
+   Every `|` (pipe) in the table above creates a new process in
+   your OS. refn runs as a single, highly optimized C++ binary, saving CPU cycles and memory.
 
 ### 🚀 Recommendation
 
@@ -176,7 +180,7 @@ make
 sudo cp refn /usr/bin
 ```
 
-> Note: The build process generates a standalone, portable binary with no external dependencies.
+> **Note:** The build process generates a standalone, portable binary with no external dependencies.
 
 ## ⚙️ Parameters
 
