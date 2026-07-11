@@ -5,16 +5,16 @@
 <h1 align="center"><strong>refn - Reads specific lines of text documents</strong></h1>
 
 <p align="center">
-  <a href="https://github.com/linuxproativo/refn/actions" style="text-decoration:none;"><img src="https://img.shields.io/github/actions/workflow/status/linuxproativo/refn/cmake-multi-platform.yml?style=flat-square&label=Build" alt="Build Status"/></a>
+  <img src="https://img.shields.io/github/actions/workflow/status/linuxproativo/refn/cmake-multi-platform.yml?style=flat-square&label=Build"/>
   <img src="https://img.shields.io/badge/Windows-Tested-0078D4?style=flat-square&logo=quarto&logoColor=white" alt="Windows"/>
-  <img src="https://img.shields.io/badge/Linux-Tested-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux"/>
+  <img src="https://img.shields.io/badge/Linux-Tested-FCC624?style=flat-square&logo=linux&logoColor=white" alt="Linux"/>
   <img src="https://img.shields.io/badge/C%2B%2B-23-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++23"/>
   <img src="https://img.shields.io/badge/Binary_Size-%3C_1.5_MiB-44CC11?style=flat-square" alt="Binary Size"/>
   <img src="https://img.shields.io/github/repo-size/linuxproativo/refn?label=Repo%20Size&style=flat-square" alt="Repo Size"/>
-  <a href="https://github.com/linuxproativo/refn/releases" style="text-decoration:none;"><img src="https://img.shields.io/github/v/release/linuxproativo/refn?color=34495e&label=Release&style=flat-square" alt="Release"/></a>
-  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn?color=a4cc35&label=Last%20Commit&style=flat-square" alt="Last Commit"/>
-  <img src="https://img.shields.io/github/release-date/linuxproativo/refn?color=a4cc35&label=Release%20Date&style=flat-square" alt="Release Date"/>
-  <a href="./LICENSE" style="text-decoration:none;"><img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="License GPL-3.0"/></a>
+  <img src="https://img.shields.io/github/v/release/linuxproativo/refn?color=34495e&label=Release&style=flat-square" alt="Release"/>
+  <img src="https://img.shields.io/github/last-commit/linuxproativo/refn?color=a4cc35&label=Last%20Commit&style=flat-square"/>
+  <img src="https://img.shields.io/github/release-date/linuxproativo/refn?color=a4cc35&label=Release%20Date&style=flat-square"/>
+  <img src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square" alt="License GPL-3.0"/>
 </p>
 
 The **refn** utility is a high-performance CLI tool designed to extract specific 
