@@ -2,7 +2,7 @@
  * @file utils.cpp
  * @brief "refn" - High-performance line reader utility.
  * @author Mauricio Ferrari
- * @date 2026-02-02
+ * @date 2026-09-06
  */
 
 #include <fstream>
@@ -30,7 +30,7 @@ unsigned long long count_lines(const char *f) {
     ifstream file(f, ios::binary);
     if (!file) return 0;
 
-    static const size_t BUFFER_SIZE = 64 * 1024; // 64KB Buffer
+    static constexpr size_t BUFFER_SIZE = 64 * 1024; // 64KB Buffer
     vector<char> buffer(BUFFER_SIZE);
     unsigned long long lines = 0;
     char last_char = '\n';
@@ -38,7 +38,7 @@ unsigned long long count_lines(const char *f) {
 
     while (file.read(buffer.data(), BUFFER_SIZE) || file.gcount() > 0) {
         empty = false;
-        auto bytes = static_cast<size_t>(file.gcount());
+        const auto bytes = static_cast<size_t>(file.gcount());
         for (size_t i = 0; i < bytes; ++i) {
             if (buffer[i] == '\n') lines++;
             last_char = buffer[i];
@@ -73,9 +73,8 @@ int view_lines(bool s, bool c, char p, const char *f, unsigned long long x, unsi
     if (!s) cout << red << f << ":" << reset << "\n";
 
     unsigned long long total_lines = 0;
-    if (p == parm_l || p == parm_i) {
+    if (p == parm_l || p == parm_i)
         total_lines = count_lines(f);
-    }
 
     unsigned long long start_at = 1;
     unsigned long long end_at = numeric_limits<unsigned long long>::max();
@@ -99,11 +98,10 @@ int view_lines(bool s, bool c, char p, const char *f, unsigned long long x, unsi
         cnt++;
 
         if (cnt >= start_at && cnt <= end_at) {
-            if (!s) {
+            if (!s)
                 cout << blue << setw(10) << cnt << green << ": " << reset << data << "\n";
-            } else {
+            else
                 cout << data << "\n";
-            }
         }
 
         if (cnt >= end_at && (p == parm_f || p == parm_d)) break;

@@ -2,11 +2,11 @@
  * @file utils.hpp
  * @brief "refn" - High-performance line reader utility.
  * @author Mauricio Ferrari
- * @date 2026-02-02
+ * @date 2026-09-06
  */
 
-#ifndef REF_UTILS_HPP
-#define REF_UTILS_HPP
+#ifndef REFN_UTILS_HPP
+#define REFN_UTILS_HPP
 
 #ifdef _WIN32
     #include <io.h>
@@ -42,4 +42,4 @@ unsigned long long count_lines(const char *f);
 
 int view_lines(bool s, bool c, char p, const char *f, unsigned long long x, unsigned long long y);
 
-#endif /** REF_UTILS_HPP **/
+#endif

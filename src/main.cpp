@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief "refn" - High-performance line reader utility.
  * @author Mauricio Ferrari
- * @date 2026-02-02
+ * @date 2026-09-06
  */
 
 #include <cstring>
@@ -16,7 +16,7 @@
 
 #include "utils.hpp"
 
-#define VERSION "4.0"
+#define VERSION "4.1"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ void help(const char *x) {
 
     cout << "\nOptions:" << endl;
     cout << "  -c, --color        Enable syntax-like coloring for line numbers." << endl;
-    cout << "  -s, --simple       Plain text output (no line numbers or headers)." << endl;
+    cout << "  -s, --structured   Structured data output (line numbers and headers)." << endl;
     cout << "  -h, --help         Display this help information and exit." << endl;
 
     cout << "\nExample:" << endl;
@@ -49,23 +49,23 @@ struct Context {
     unsigned long long arg1 = DEF_NUM;
     unsigned long long arg2 = null_arg;
     bool use_color = false;
-    bool simple_view = false;
+    bool simple_view = true;
 };
 
 /// Safely converts string to unsigned long long without throwing exceptions.
-unsigned long long safe_stoull(const char* str, unsigned long long default_value) {
+unsigned long long safe_stoull(const char* str, const unsigned long long default_value) {
     if (!str || *str == '\0') return default_value;
     char* end_ptr;
-    unsigned long long val = strtoull(str, &end_ptr, 10);
+    const unsigned long long val = strtoull(str, &end_ptr, 10);
     return (end_ptr == str) ? default_value : val;
 }
 
-int main(int argc, char **argv) {
+int main(const int argc, char **argv) {
     const char* ref_file = strrchr(argv[0], '/');
     ref_file = (ref_file) ? ref_file + 1 : argv[0];
     Context ctx;
 
-    const struct option long_opts[] = {
+    const option long_opts[] = {
             {"first",   optional_argument, nullptr, parm_f},
             {"last",    optional_argument, nullptr, parm_l},
             {"delimit", required_argument, nullptr, parm_d},
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
         switch (opt) {
             case parm_f:
             case parm_l:
-                ctx.mode = (char)opt;
+                ctx.mode = static_cast<char>(opt);
                 if (optarg) {
                     ctx.arg1 = safe_stoull(optarg, DEF_NUM);
                 }
@@ -94,11 +94,10 @@ int main(int argc, char **argv) {
                 break;
             case parm_d:
             case parm_i:
-                ctx.mode = (char)opt;
+                ctx.mode = static_cast<char>(opt);
                 if (optarg) {
                     string s(optarg);
-                    size_t pos = s.find('-');
-                    if (pos != string::npos) {
+                    if (const size_t pos = s.find('-'); pos != string::npos) {
                         ctx.arg1 = safe_stoull(s.substr(0, pos).c_str(), 1);
                         ctx.arg2 = safe_stoull(s.substr(pos + 1).c_str(), 1);
                     } else {
@@ -108,18 +107,17 @@ int main(int argc, char **argv) {
                 }
                 break;
             case parm_c: ctx.use_color = true; break;
-            case parm_s: ctx.simple_view = true; break;
-            case parm_h: help((char*)ref_file); break;
+            case parm_s: ctx.simple_view = false; break;
+            case parm_h: help(ref_file); break;
             default: return 1;
         }
     }
 
-    if (optind >= argc) {
-        help((char*)ref_file);
-    }
+    if (optind >= argc)
+        help(ref_file);
 
     for (int i = optind; i < argc; i++) {
-        char* current_file = argv[i];
+        const char* current_file = argv[i];
 
         if (!IS_READABLE(current_file)) {
             cerr << YELLOW << ref_file << ": File '" << current_file << "' not found." << RESET << endl;

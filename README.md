@@ -88,7 +88,7 @@ same result using standard POSIX tools (`sed`, `awk`, `tail`, `head`).
     <tr>
       <td>Range 50-60 (Simple output)</td>
       <td><code>sed -n '50,60p;60q' file.txt</code></td>
-      <td><code>refn -sd50-60 file.txt</code></td>
+      <td><code>refn -d50-60 file.txt</code></td>
     </tr>
     <tr>
       <td>Line 10 of multiple files</td>
@@ -103,7 +103,7 @@ same result using standard POSIX tools (`sed`, `awk`, `tail`, `head`).
     <tr>
       <td>Extract 20th line (Pipe mess)</td>
       <td><code>cat -n f | grep -w 20 | cut -f2-</code></td>
-      <td><code>refn -d20 -s file.txt</code></td>
+      <td><code>refn -d20 file.txt</code></td>
     </tr>
     <tr>
       <td>First line of a file</td>
@@ -123,17 +123,12 @@ same result using standard POSIX tools (`sed`, `awk`, `tail`, `head`).
     <tr>
       <td>100th line from end (Clean)</td>
       <td><code>tail -100 file | head -1</code></td>
-      <td><code>refn -si100 file.txt</code></td>
+      <td><code>refn -i100 file.txt</code></td>
     </tr>
     <tr>
       <td>First 5 lines (AWK)</td>
       <td><code>awk 'NR <= 5' file.txt</code></td>
       <td><code>refn -f5 file.txt</code></td>
-    </tr>
-    <tr>
-      <td>Line 10 with colors (Grep)</td>
-      <td><code>grep --color=always -n "^" f | sed...</code></td>
-      <td><code>refn -cd10 file.txt</code></td>
     </tr>
     <tr>
       <td>Range 5-10 from multiple files</td>
@@ -196,7 +191,7 @@ Operations:
 
 Options:
   -c, --color        Enable syntax-like coloring for line numbers.
-  -s, --simple       Plain text output (no line numbers or headers).
+  -s, --structured   Structured data output (line numbers and headers).
   -h, --help         Display this help information and exit.
 ```
 
@@ -215,7 +210,7 @@ $ head -5 LICENSE
 ```
 
 ```bash
-$ refn -f5 LICENSE 
+$ refn -sf5 LICENSE 
 /home/mauricio/GIT/refine/LICENSE:
          1:                     GNU GENERAL PUBLIC LICENSE
          2:                        Version 3, 29 June 2007
@@ -225,7 +220,7 @@ $ refn -f5 LICENSE
 ```
 
 ```bash
-$ refn -sf5 LICENSE 
+$ refn -f5 LICENSE 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -245,7 +240,7 @@ Public License instead of this License.  But first, please read
 ```
 
 ```bash
-$ refn -l5 LICENSE 
+$ refn -sl5 LICENSE 
 /home/mauricio/GIT/refine/LICENSE:
        670: into proprietary programs.  If your program is a subroutine library, you
        671: may consider it more useful to permit linking proprietary applications with
@@ -255,7 +250,7 @@ $ refn -l5 LICENSE
 ```
 
 ```bash
-$ refn -sl5 LICENSE 
+$ refn -l5 LICENSE 
 into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
@@ -276,7 +271,7 @@ these rights or asking you to surrender the rights.  Therefore, you have
 ```
 
 ```bash
-$ refn -d26-30 LICENSE 
+$ refn -sd26-30 LICENSE 
 /home/mauricio/GIT/refine/LICENSE:
         26: want it, that you can change the software or use pieces of it in new
         27: free programs, and that you know you can do these things.
@@ -286,7 +281,7 @@ $ refn -d26-30 LICENSE
 ```
 
 ```bash
-$ refn -sd26-30 LICENSE 
+$ refn -d26-30 LICENSE 
 want it, that you can change the software or use pieces of it in new
 free programs, and that you know you can do these things.
 
@@ -302,13 +297,13 @@ $ awk 'NR==10 {print; exit}' LICENSE
 ```
 
 ```bash
-$ refn -d10 LICENSE 
+$ refn -sd10 LICENSE 
 /home/mauricio/GIT/refine/LICENSE:
         10:   The GNU General Public License is a free, copyleft license for
 ```
 
 ```bash
-$ refn -sd10 LICENSE 
+$ refn -d10 LICENSE 
   The GNU General Public License is a free, copyleft license for
 ```
 
@@ -319,13 +314,13 @@ $ tail /etc/slackpkg/mirrors | head -1
 ```
 
 ```bash
-$ refn -i10 /etc/slackpkg/mirrors 
+$ refn -si10 /etc/slackpkg/mirrors 
 /etc/slackpkg/mirrors:
        353: # https://mirror.slackbuilds.org/slackware/slackware64-current/
 ```
 
 ```bash
-$ refn -si10 /etc/slackpkg/mirrors 
+$ refn -i10 /etc/slackpkg/mirrors 
 # https://mirror.slackbuilds.org/slackware/slackware64-current/
 ```
 
